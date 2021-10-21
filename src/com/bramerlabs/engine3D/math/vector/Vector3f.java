@@ -20,6 +20,9 @@ public class Vector3f {
     public static final Vector3f e2 = new Vector3f(0, 1, 0);
     public static final Vector3f e3 = new Vector3f(0, 0, 1);
 
+    public static final Vector3f zero = new Vector3f(0, 0, 0);
+    public static final Vector3f one = new Vector3f(1, 1, 1);
+
     /**
      * default constructor
      * @param x - the x component

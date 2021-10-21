@@ -20,6 +20,11 @@ public class Shader {
         this.fragmentFile = FileLoader.load(fragmentPath);
     }
 
+    public Shader(String shaderRoot) {
+        this.vertexFile = FileLoader.load(shaderRoot + "/vertex.glsl");
+        this.fragmentFile = FileLoader.load(shaderRoot + "/fragment.glsl");
+    }
+
     public void create() {
         programID = GL20.glCreateProgram();
         vertexID = createShader(GL20.GL_VERTEX_SHADER, vertexFile);

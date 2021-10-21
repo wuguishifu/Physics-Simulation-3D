@@ -4,6 +4,7 @@ import com.bramerlabs.engine3D.graphics.Camera;
 import com.bramerlabs.engine3D.graphics.Material;
 import com.bramerlabs.engine3D.graphics.Shader;
 import com.bramerlabs.engine3D.graphics.io.window.Input;
+import com.bramerlabs.engine3D.graphics.io.window.Window;
 import com.bramerlabs.engine3D.graphics.io.window.WindowConstants;
 import com.bramerlabs.engine3D.graphics.renderers.Renderer;
 import com.bramerlabs.engine3D.math.matrix.Matrix4f;
@@ -12,7 +13,7 @@ import com.bramerlabs.engine3D.objects.ObjectLoader;
 import com.bramerlabs.engine3D.objects.RenderObject;
 import org.lwjgl.opengl.GL46;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.ArrayList;
 
 public class Test implements Runnable {
