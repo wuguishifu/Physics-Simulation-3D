@@ -144,6 +144,14 @@ public class Window {
         GLFW.glfwTerminate();
     }
 
+    /**
+     * sets the current mouse state of the window
+     * @param lock - whether or not the mouse should be locked
+     */
+    public void mouseState(boolean lock) {
+        GLFW.glfwSetInputMode(windowHandle, GLFW.GLFW_CURSOR, lock ? GLFW.GLFW_CURSOR_DISABLED : GLFW.GLFW_CURSOR_NORMAL);
+    }
+
     public void clear() {
         GL46.glClearColor(this.r, this.g, this.b, 1.0f);
         GL46.glClear(GL46.GL_COLOR_BUFFER_BIT | GL46.GL_DEPTH_BUFFER_BIT);

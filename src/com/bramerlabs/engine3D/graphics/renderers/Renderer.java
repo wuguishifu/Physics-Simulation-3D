@@ -82,4 +82,28 @@ public class Renderer {
         GL30.glBindVertexArray(0);
     }
 
+    public void renderInstancedMesh(RenderObject object, Camera camera, Shader shader, Matrix4f model) {
+        GL30.glBindVertexArray(object.getMesh().getVao());
+        GL30.glEnableVertexAttribArray(Mesh.POSITION);
+        GL30.glEnableVertexAttribArray(Mesh.NORMAL);
+        GL30.glEnableVertexAttribArray(Mesh.COLOR);
+        GL15.glBindBuffer(GL15.GL_ELEMENT_ARRAY_BUFFER, object.getMesh().getIbo());
+        shader.bind();
+        shader.setUniform("vModel", model);
+        shader.setUniform("vView", Matrix4f.view(camera.getPosition(), camera.getRotation()));
+        shader.setUniform("vProjection", window.getProjectionMatrix());
+        shader.setUniform("lightPos", lightPos);
+        shader.setUniform("lightLevel", lightLevel);
+        shader.setUniform("viewPos", camera.getPosition());
+        shader.setUniform("lightColor", lightColor);
+        shader.setUniform("reflectiveness", reflectiveness); // the value of the specular reflectiveness
+        GL11.glDrawElements(GL11.GL_TRIANGLES, object.getMesh().getIndices().length, GL11.GL_UNSIGNED_INT, 0);
+        shader.unbind();
+        GL15.glBindBuffer(GL15.GL_ELEMENT_ARRAY_BUFFER, 0);
+        GL30.glDisableVertexAttribArray(Mesh.POSITION);
+        GL30.glDisableVertexAttribArray(Mesh.NORMAL);
+        GL30.glDisableVertexAttribArray(Mesh.COLOR);
+        GL30.glBindVertexArray(0);
+    }
+
 }
