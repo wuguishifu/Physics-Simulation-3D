@@ -14,12 +14,12 @@ public class Spring {
     }
 
     public void update(float dt) {
-        applyForce();
+        applyForce(dt);
     }
 
-    public void applyForce() {
-        p1.applyForce(null);
-        p2.applyForce(null);
+    public void applyForce(float dt) {
+        p1.applyForce(new Vector3f(0, 1f, 0));
+        p2.applyForce(new Vector3f(0, 1f, 0));
     }
 
     public Matrix4f getModel() {

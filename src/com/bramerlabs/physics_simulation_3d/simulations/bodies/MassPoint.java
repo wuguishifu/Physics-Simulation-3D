@@ -11,7 +11,7 @@ public class MassPoint {
     public Vector3f scale = new Vector3f(0.2f, 0.2f, 0.2f);
     public Vector3f rotation = new Vector3f(0, 0, 0);
 
-    public float mass;
+    public float mass = 10;
 
     public MassPoint() {
         this.position = new Vector3f(0, 0, 0);
@@ -32,13 +32,15 @@ public class MassPoint {
     }
 
     public void applyForce(Vector3f force) {
-
+        acceleration = Vector3f.scale(force, 1f/mass);
     }
 
     public void update(float dt) {
         if (!velocity.equals(Vector3f.zero)) {
-            position = Vector3f.add(position, Vector3f.normalize(velocity, dt));
+            position = Vector3f.add(position, Vector3f.scale(velocity, dt));
         }
+        velocity = Vector3f.add(velocity, acceleration);
+        System.out.println(velocity);
     }
 
     public Matrix4f getModel() {

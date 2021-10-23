@@ -44,6 +44,9 @@ public class Body {
         for (MassPoint point : points) {
             point.update(dt);
         }
+        for (Spring spring : springs) {
+            spring.update(dt);
+        }
     }
 
     public void render(Renderer renderer, Camera camera, Shader shader) {
