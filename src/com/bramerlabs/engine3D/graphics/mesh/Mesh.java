@@ -16,22 +16,22 @@ public abstract class Mesh {
     protected int[] indices;
 
     protected int
-    vao, // vertex array object
-    pbo, // position buffer
-    nbo, // normal buffer
-    tan, // tangent buffer
-    bbo, // bitangent buffer
-    tbo, // texture coord buffer
-    cbo, // color buffer
-    ibo; // index array buffer
+            vao, // vertex array object
+            pbo, // position buffer
+            nbo, // normal buffer
+            tan, // tangent buffer
+            bbo, // bitangent buffer
+            tbo, // texture coord buffer
+            cbo, // color buffer
+            ibo; // index array buffer
 
     public static final int
-    POSITION = 0,
-    NORMAL = 1,
-    COLOR = 2,
-    TANGENT = 2,
-    BITANGENT = 3,
-    TEXTURE_COORD = 4;
+            POSITION = 0,
+            NORMAL = 1,
+            COLOR = 2,
+            TANGENT = 2,
+            BITANGENT = 3,
+            TEXTURE_COORD = 4;
 
     public Mesh(Vertex[] vertices, int[] indices) {
         this.vertices = vertices;
@@ -44,7 +44,7 @@ public abstract class Mesh {
         FloatBuffer positionBuffer = MemoryUtil.memAllocFloat(vertices.length * 3);
         float[] positionData = new float[vertices.length * 3];
         for (int i = 0; i < vertices.length; i++) {
-            positionData[3 * i    ] = vertices[i].getPosition().x;
+            positionData[3 * i] = vertices[i].getPosition().x;
             positionData[3 * i + 1] = vertices[i].getPosition().y;
             positionData[3 * i + 2] = vertices[i].getPosition().z;
         }
@@ -56,7 +56,7 @@ public abstract class Mesh {
         FloatBuffer normalBuffer = MemoryUtil.memAllocFloat(vertices.length * 3);
         float[] normalData = new float[vertices.length * 3];
         for (int i = 0; i < vertices.length; i++) {
-            normalData[3 * i    ] = vertices[i].getNormal().x;
+            normalData[3 * i] = vertices[i].getNormal().x;
             normalData[3 * i + 1] = vertices[i].getNormal().y;
             normalData[3 * i + 2] = vertices[i].getNormal().z;
         }

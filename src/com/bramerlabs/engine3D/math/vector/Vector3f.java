@@ -25,6 +25,7 @@ public class Vector3f {
 
     /**
      * default constructor
+     *
      * @param x - the x component
      * @param y - the y component
      * @param z - the z component
@@ -37,6 +38,7 @@ public class Vector3f {
 
     /**
      * constructor for 1 specified value
+     *
      * @param val - the value for all three components to be set to
      */
     public Vector3f(float val) {
@@ -47,6 +49,7 @@ public class Vector3f {
 
     /**
      * constructor for duplicating a vector
+     *
      * @param v - the vector to duplicate
      */
     public Vector3f(Vector3f v) {
@@ -57,6 +60,7 @@ public class Vector3f {
 
     /**
      * constructor for a vector from a 2-float vector and a float z component
+     *
      * @param v - the 2-float vector
      * @param z - the z component
      */
@@ -68,10 +72,11 @@ public class Vector3f {
 
     /**
      * constructor from a float array
+     *
      * @param v - a float array containing values in form [x, y, z]
-     * method will automatically set the position based off of available variables.
-     * No minimum or maximum necessary supplied variables, if more than 3 are supplied the vector
-     * will be constructed out of the first 3.
+     *          method will automatically set the position based off of available variables.
+     *          No minimum or maximum necessary supplied variables, if more than 3 are supplied the vector
+     *          will be constructed out of the first 3.
      */
     public Vector3f(float[] v) {
         this.x = v.length > 0 ? v[0] : 0;
@@ -82,6 +87,7 @@ public class Vector3f {
     /**
      * constructor from a java awt color
      * makes a vector in the form (r, g, b)
+     *
      * @param c - the color
      */
     public Vector3f(Color c) {
@@ -96,6 +102,7 @@ public class Vector3f {
 
     /**
      * sets each component of this vector
+     *
      * @param x - the new x component
      * @param y - the new y component
      * @param z - the new z component
@@ -108,6 +115,7 @@ public class Vector3f {
 
     /**
      * sets the x component
+     *
      * @param x - the new x value
      */
     public void setX(float x) {
@@ -116,6 +124,7 @@ public class Vector3f {
 
     /**
      * sets the y component
+     *
      * @param y - the new y value
      */
     public void setY(float y) {
@@ -124,6 +133,7 @@ public class Vector3f {
 
     /**
      * sets the z component
+     *
      * @param z - the new z value
      */
     public void setZ(float z) {
@@ -136,6 +146,7 @@ public class Vector3f {
 
     /**
      * adds values to each component to this vector
+     *
      * @param dx - the change in x component
      * @param dy - the change in y component
      * @param dz - the change in z component
@@ -150,6 +161,7 @@ public class Vector3f {
 
     /**
      * adds a vector to this vector
+     *
      * @param v - the vector to be added to this vector
      * @return - this vector
      */
@@ -162,7 +174,8 @@ public class Vector3f {
 
     /**
      * adds values to each component of a vector
-     * @param v - the vector to add to
+     *
+     * @param v  - the vector to add to
      * @param dx - the change in x component
      * @param dy - the change in y component
      * @param dz - the change in z component
@@ -174,6 +187,7 @@ public class Vector3f {
 
     /**
      * adds two vectors together
+     *
      * @param v - vector 1
      * @param u - vector 2
      * @return - a new vector, the sum of v and u
@@ -184,6 +198,7 @@ public class Vector3f {
 
     /**
      * scales each component in this vector by a scale factor
+     *
      * @param scaleFactor - the scale factor
      * @return - this vector
      */
@@ -196,7 +211,8 @@ public class Vector3f {
 
     /**
      * scales each component in a vector by a scale factor
-     * @param v - the vector to scale
+     *
+     * @param v           - the vector to scale
      * @param scaleFactor - the scale factor
      * @return - a new vector, the scalar scale of v by scaleFactor
      */
@@ -206,6 +222,7 @@ public class Vector3f {
 
     /**
      * subtracts from each component of this vector
+     *
      * @param dx - the change in x component
      * @param dy - the change in y component
      * @param dz - the change in z component
@@ -220,6 +237,7 @@ public class Vector3f {
 
     /**
      * subtracts each component of this vector by a component of another vector
+     *
      * @param v - the other vector
      * @return - this vector
      */
@@ -232,7 +250,8 @@ public class Vector3f {
 
     /**
      * subtracts from each component in a vector
-     * @param v - the vector
+     *
+     * @param v  - the vector
      * @param dx - the change in x component
      * @param dy - the change in y component
      * @param dz - the change in z component
@@ -244,6 +263,7 @@ public class Vector3f {
 
     /**
      * subtracts two vectors
+     *
      * @param v - vector 1
      * @param u - vector 2
      * @return - a new vector, v - u
@@ -254,6 +274,7 @@ public class Vector3f {
 
     /**
      * multiplies the components of this vector by values
+     *
      * @param mx - the multiplication factor of the x component
      * @param my - the multiplication factor of the y component
      * @param mz - the multiplication factor of the z component
@@ -268,6 +289,7 @@ public class Vector3f {
 
     /**
      * multiplies the components of this vector by the components of another vector
+     *
      * @param v - the other vector
      * @return - this vector
      */
@@ -280,7 +302,8 @@ public class Vector3f {
 
     /**
      * multiplies the components of a vector by values
-     * @param v - the vector
+     *
+     * @param v  - the vector
      * @param mx - the multiplication factor of the x component
      * @param my - the multiplication factor of the y component
      * @param mz - the multiplication factor of the z component
@@ -292,6 +315,7 @@ public class Vector3f {
 
     /**
      * multiplies the components of one vector by the components of another vector
+     *
      * @param v - the first vector
      * @param u - the second vector
      * @return - a vector where the values are the straight multiplication of v and u
@@ -302,6 +326,7 @@ public class Vector3f {
 
     /**
      * divides the components of this vector by values
+     *
      * @param mx - the division factor of the x component
      * @param my - the division factor of the y component
      * @param mz - the division factor of the z component
@@ -316,6 +341,7 @@ public class Vector3f {
 
     /**
      * divides the components of this vector
+     *
      * @param d - the division factor for each component
      * @return - this vector
      */
@@ -328,6 +354,7 @@ public class Vector3f {
 
     /**
      * divides the components of a vector
+     *
      * @param v - the vector
      * @param d - the division factor
      * @return - the new vector, v/d
@@ -338,6 +365,7 @@ public class Vector3f {
 
     /**
      * divides the components of this vector by the components of another vector
+     *
      * @param v - the other vector
      * @return - this vector
      */
@@ -350,7 +378,8 @@ public class Vector3f {
 
     /**
      * divides the components of a vector by values
-     * @param v - the vector
+     *
+     * @param v  - the vector
      * @param mx - the division factor of the x component
      * @param my - the division factor of the y component
      * @param mz - the division factor of the z component
@@ -362,6 +391,7 @@ public class Vector3f {
 
     /**
      * divides the components of one vector by the components of another vector
+     *
      * @param v - the first vector
      * @param u - the second vector
      * @return - a new vector
@@ -372,6 +402,7 @@ public class Vector3f {
 
     /**
      * dots this vector with another vector
+     *
      * @param v - the other vector
      * @return - the dot product of this vector and the other vector
      */
@@ -381,6 +412,7 @@ public class Vector3f {
 
     /**
      * dots two vectors together
+     *
      * @param v - the first vector
      * @param u - the second vector
      * @return - the dot product v dot u
@@ -391,6 +423,7 @@ public class Vector3f {
 
     /**
      * computes the cross product of two vectors
+     *
      * @param v - vector 1
      * @param u - vector 2
      * @return - the cross product of v and u (v x u)
@@ -404,6 +437,7 @@ public class Vector3f {
 
     /**
      * computes the length of this vector
+     *
      * @return - the length of this vector
      */
     public float length() {
@@ -412,6 +446,7 @@ public class Vector3f {
 
     /**
      * computes the length of a vector
+     *
      * @param v - the vector
      * @return - the length of vector v
      */
@@ -421,6 +456,7 @@ public class Vector3f {
 
     /**
      * normalizes this vector
+     *
      * @return - this vector
      */
     public Vector3f normalize() {
@@ -432,6 +468,7 @@ public class Vector3f {
 
     /**
      * normalizes this vector to a specific length
+     *
      * @param l - the new length
      * @return - this vector
      */
@@ -444,6 +481,7 @@ public class Vector3f {
 
     /**
      * normalizes a vector
+     *
      * @param v - the other vector
      * @return - a new vector with a length of 1 in the same direction of v
      */
@@ -457,6 +495,7 @@ public class Vector3f {
 
     /**
      * normalizes a vector to a specific length
+     *
      * @param v - the vector
      * @param l - the length
      * @return - a new vector with length l in the same direction of v
@@ -467,6 +506,7 @@ public class Vector3f {
 
     /**
      * determines the length between two vectors
+     *
      * @param v - vector 1
      * @param u - vector 2
      * @return - the length between vector 1 and vector 2
@@ -477,6 +517,7 @@ public class Vector3f {
 
     /**
      * determines the midpoint of the two vectors
+     *
      * @param v - vector 1
      * @param u - vector 2
      * @return - a vector representing the midpoint of the two vectors
@@ -487,6 +528,7 @@ public class Vector3f {
 
     /**
      * determines the angle between two vectors
+     *
      * @param v - vector 1
      * @param u - vector 2
      * @return - the angle between
@@ -509,6 +551,7 @@ public class Vector3f {
 
     /**
      * quickly determines the inverse magnitude of a vector using the Fast Inverse Square Root formula
+     *
      * @param v - the vector
      * @return - the magnitude
      */
@@ -524,8 +567,9 @@ public class Vector3f {
 
     /**
      * rotates this vector around an axis
+     *
      * @param angle - the angle to rotate
-     * @param axis - the axis
+     * @param axis  - the axis
      */
     public void rotate(float angle, Vector3f axis) {
         Matrix4f rotationMatrix = Matrix4f.rotate(angle, axis);
@@ -535,8 +579,9 @@ public class Vector3f {
 
     /**
      * rotates a vector around an axis
-     * @param v - the vector to rotate
-     * @param axis - the axis to rotate it around
+     *
+     * @param v     - the vector to rotate
+     * @param axis  - the axis to rotate it around
      * @param angle - the angle to rotate it by
      * @return - the new rotated vector
      */
@@ -548,6 +593,7 @@ public class Vector3f {
 
     /**
      * maximizes all the values of this vector to be over a specific value
+     *
      * @param min - the minimum value
      */
     public void maximize(float min) {
@@ -558,6 +604,7 @@ public class Vector3f {
 
     /**
      * minimizes all the values of this vector to be under a specific value
+     *
      * @param max - the maximum value
      */
     public void minimize(float max) {
@@ -568,6 +615,7 @@ public class Vector3f {
 
     /**
      * getter method
+     *
      * @return - the x component of this vector
      */
     public float getX() {
@@ -576,6 +624,7 @@ public class Vector3f {
 
     /**
      * getter method
+     *
      * @return - the y component of this vector
      */
     public float getY() {
@@ -584,6 +633,7 @@ public class Vector3f {
 
     /**
      * getter method
+     *
      * @return - the z component o f this vector
      */
     public float getZ() {
@@ -592,6 +642,7 @@ public class Vector3f {
 
     /**
      * getter method
+     *
      * @return - the i component of this vector
      */
     public float getI() {
@@ -600,6 +651,7 @@ public class Vector3f {
 
     /**
      * getter method
+     *
      * @return - the j component of this vector
      */
     public float getJ() {
@@ -608,6 +660,7 @@ public class Vector3f {
 
     /**
      * getter method
+     *
      * @return - the k component of this vector
      */
     public float getK() {
@@ -616,6 +669,7 @@ public class Vector3f {
 
     /**
      * getter method
+     *
      * @return - a 2 float vector of some of the components in this vector
      */
     public Vector2f xy() {
@@ -624,6 +678,7 @@ public class Vector3f {
 
     /**
      * getter method
+     *
      * @return - a 2 float vector of some of the components in this vector
      */
     @SuppressWarnings("SuspiciousNameCombination")
@@ -633,6 +688,7 @@ public class Vector3f {
 
     /**
      * getter method
+     *
      * @return - a 2 float vector of some of the components in this vector
      */
     public Vector2f xz() {
@@ -641,6 +697,7 @@ public class Vector3f {
 
     /**
      * converts this 3-float vector to a float array
+     *
      * @return - the float array
      */
     public float[] toFloatArray() {
@@ -649,6 +706,7 @@ public class Vector3f {
 
     /**
      * determines if two vectors are exactly identical
+     *
      * @param o - the other object
      * @return - true if this and o are both vectors that are exactly equal
      */
@@ -662,7 +720,8 @@ public class Vector3f {
 
     /**
      * determines if two vectors are nearly identical
-     * @param o - the other object
+     *
+     * @param o       - the other object
      * @param epsilon - the max error
      * @return - true if this and o are both vectors and the absolute error for each component is less than epsilon
      */
@@ -679,6 +738,7 @@ public class Vector3f {
 
     /**
      * creates a hashcode of this vector
+     *
      * @return - the hashcode
      */
     @Override
@@ -688,6 +748,7 @@ public class Vector3f {
 
     /**
      * converts this vector to a string
+     *
      * @return - the string value of this vector
      */
     @Override

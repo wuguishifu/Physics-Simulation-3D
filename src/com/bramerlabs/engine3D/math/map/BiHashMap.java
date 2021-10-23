@@ -3,7 +3,7 @@ package com.bramerlabs.engine3D.math.map;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BiHashMap <K1, K2, V> {
+public class BiHashMap<K1, K2, V> {
     private final Map<K1, Map<K2, V>> bimap;
 
     public BiHashMap() {
@@ -11,14 +11,13 @@ public class BiHashMap <K1, K2, V> {
     }
 
     /**
-     *
-     * @param key1 the first key
-     * @param key2 the second key
+     * @param key1  the first key
+     * @param key2  the second key
      * @param value the value to be set
      * @return the value previously associated with (key1, key2),
      * @see Map#put(Object, Object)
      */
-    public V put (K1 key1, K2 key2, V value) {
+    public V put(K1 key1, K2 key2, V value) {
         Map<K2, V> map;
         if (bimap.containsKey(key1)) {
             map = bimap.get(key1);
@@ -30,7 +29,6 @@ public class BiHashMap <K1, K2, V> {
     }
 
     /**
-     *
      * @param key1 the first key
      * @param key2 the second key
      * @return the value to which the specified key is mapped, or <code>null</code> if this map contains no mapping for
@@ -45,7 +43,6 @@ public class BiHashMap <K1, K2, V> {
     }
 
     /**
-     *
      * @param key1 the first key to detect
      * @param key2 the second key to detect
      * @return true if this map contains the key set <code>(key1, key2)</code>
@@ -56,7 +53,6 @@ public class BiHashMap <K1, K2, V> {
     }
 
     /**
-     *
      * @param key the key to detect
      * @return true if this map contains the key <code>key</code>
      * @see Map#containsKey(Object)
@@ -67,6 +63,7 @@ public class BiHashMap <K1, K2, V> {
 
     /**
      * clears the map
+     *
      * @see Map#clear()
      */
     public void clear() {

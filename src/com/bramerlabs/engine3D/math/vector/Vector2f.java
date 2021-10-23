@@ -21,6 +21,7 @@ public class Vector2f {
 
     /**
      * default constructor
+     *
      * @param x - the x component
      * @param y - the y component
      */
@@ -31,6 +32,7 @@ public class Vector2f {
 
     /**
      * constructor for 1 specified value
+     *
      * @param val - the value for both components to be set to
      */
     public Vector2f(float val) {
@@ -40,6 +42,7 @@ public class Vector2f {
 
     /**
      * constructor for duplicating a vector
+     *
      * @param v - the vector to duplicate
      */
     public Vector2f(Vector2f v) {
@@ -49,6 +52,7 @@ public class Vector2f {
 
     /**
      * constructs a 2-float vector from a float array
+     *
      * @param v - the float array
      */
     public Vector2f(float[] v) {
@@ -58,6 +62,7 @@ public class Vector2f {
 
     /**
      * generates a random vector with all components between 0 and a max value
+     *
      * @param max - the max value
      * @return - the new vector
      */
@@ -67,6 +72,7 @@ public class Vector2f {
 
     /**
      * generates a random vector with all components between 0 and 1
+     *
      * @return - the new vector
      */
     public static Vector2f random() {
@@ -75,6 +81,7 @@ public class Vector2f {
 
     /**
      * generates a random vector with all components between 0 and a max value
+     *
      * @param maxX - the max x value
      * @param maxY - the max y value
      * @return - the new vector
@@ -85,6 +92,7 @@ public class Vector2f {
 
     /**
      * sets the components of this vector
+     *
      * @param x - the new x component
      * @param y - the new y component
      */
@@ -95,6 +103,7 @@ public class Vector2f {
 
     /**
      * sets the x component of this vector
+     *
      * @param x - the new x component
      */
     public void setX(float x) {
@@ -103,6 +112,7 @@ public class Vector2f {
 
     /**
      * sets the y component of this vector
+     *
      * @param y - the new y component
      */
     public void setY(float y) {
@@ -111,6 +121,7 @@ public class Vector2f {
 
     /**
      * adds components to this vector
+     *
      * @param dx - the change in x component
      * @param dy - the change in y component
      * @return - this vector
@@ -123,6 +134,7 @@ public class Vector2f {
 
     /**
      * adds a vector to this vector
+     *
      * @param v - the vector to add to this vector
      * @return - this vector
      */
@@ -134,7 +146,8 @@ public class Vector2f {
 
     /**
      * adds to the components of a vector
-     * @param v - the vector to add to
+     *
+     * @param v  - the vector to add to
      * @param dx - the change in x component
      * @param dy - the change in y component
      * @return - a new vector, v + (dx, dy)
@@ -145,6 +158,7 @@ public class Vector2f {
 
     /**
      * adds two vectors together
+     *
      * @param v - vector 1
      * @param u - vector 2
      * @return - a new vector, the sum of v and u
@@ -155,6 +169,7 @@ public class Vector2f {
 
     /**
      * scales the entire vector by a certain factor
+     *
      * @param scaleFactor - the factor to scale each component by
      * @return - this vector
      */
@@ -166,7 +181,8 @@ public class Vector2f {
 
     /**
      * scales an entire vector by a certain factor
-     * @param v - the vector to scale
+     *
+     * @param v           - the vector to scale
      * @param scaleFactor - the factor to scale each component by
      * @return - a new scaled vector
      */
@@ -176,6 +192,7 @@ public class Vector2f {
 
     /**
      * subtracts components from this vector
+     *
      * @param dx - the amount to subtract from x
      * @param dy - the amount to subtract from y
      * @return - this vector
@@ -188,6 +205,7 @@ public class Vector2f {
 
     /**
      * subtracts components of this vector by components of another vector
+     *
      * @param v - the other vector
      * @return - this vector
      */
@@ -199,7 +217,8 @@ public class Vector2f {
 
     /**
      * subtracts components from a vector
-     * @param v - the vector
+     *
+     * @param v  - the vector
      * @param dx - the change in x position
      * @param dy - the change in y position
      * @return - a new vector, the difference v - (dx, dy)
@@ -210,6 +229,7 @@ public class Vector2f {
 
     /**
      * subtracts two vectors
+     *
      * @param v - vector 1
      * @param u - vector 2
      * @return - a new vector, the difference v - u
@@ -220,6 +240,7 @@ public class Vector2f {
 
     /**
      * multiplies the components of this vector by certain values
+     *
      * @param mx - the multiplication factor of the x component
      * @param my - the multiplication factor of the y component
      * @return - this vector
@@ -232,6 +253,7 @@ public class Vector2f {
 
     /**
      * multiplies the components of this vector by the components of another vector
+     *
      * @param v - the other vector
      * @return - this vector
      */
@@ -243,7 +265,8 @@ public class Vector2f {
 
     /**
      * multiplies the components of a vector by certain values
-     * @param v - vector to multiply components by
+     *
+     * @param v  - vector to multiply components by
      * @param mx - the multiplication factor of the x component
      * @param my - the multiplication factor of the y component
      * @return - a new vector, (v.x * mx, v.y * my)
@@ -254,10 +277,11 @@ public class Vector2f {
 
     /**
      * straight multiplies values of two vectors
+     *
      * @param v - vector 1
      * @param u - vector 2
      * @return - a new vector, where the x and y components are the straight multiplications
-     *           of the x and y components of v and u
+     * of the x and y components of v and u
      */
     public static Vector2f multiply(Vector2f v, Vector2f u) {
         return new Vector2f(v.x * u.x, v.y * u.y);
@@ -265,6 +289,7 @@ public class Vector2f {
 
     /**
      * divides the components of this vector by certain values
+     *
      * @param mx - the division factor of the x component
      * @param my - the division factor of the y component
      * @return - this vector
@@ -277,6 +302,7 @@ public class Vector2f {
 
     /**
      * divides the components of this vector by the components of another vector
+     *
      * @param v - the other vector
      * @return - this vector
      */
@@ -288,6 +314,7 @@ public class Vector2f {
 
     /**
      * divides the components of a vector by a value
+     *
      * @param v - the vector
      * @param m - the value
      * @return - the new vector, (v.x / m, v.y / m)
@@ -298,7 +325,8 @@ public class Vector2f {
 
     /**
      * divides the components of a vector by certain values
-     * @param v - the vector
+     *
+     * @param v  - the vector
      * @param mx - the division factor of the x component
      * @param my - the division factor of the y component
      * @return - the new vector, (v.x / mx, v.y / my)
@@ -309,6 +337,7 @@ public class Vector2f {
 
     /**
      * divides the components of one vector by the components of another vector
+     *
      * @param v - the first vector
      * @param u - the second vector
      * @return - a new vector where the components are the straight divisions of the components of v and u
@@ -319,6 +348,7 @@ public class Vector2f {
 
     /**
      * dots this vector with another vector
+     *
      * @param v - the other vector
      * @return - the dot product of this vector and the other vector
      */
@@ -328,6 +358,7 @@ public class Vector2f {
 
     /**
      * computes the dot product of two vectors
+     *
      * @param v - the first vector
      * @param u - the second vector
      * @return - the dot product of u and v
@@ -338,6 +369,7 @@ public class Vector2f {
 
     /**
      * computes the length of this vector
+     *
      * @return - the length of this vector
      */
     public float length() {
@@ -346,6 +378,7 @@ public class Vector2f {
 
     /**
      * computes the length of a vector
+     *
      * @param v - the vector
      * @return - the length of v
      */
@@ -359,6 +392,7 @@ public class Vector2f {
 
     /**
      * normalizes this vector
+     *
      * @return - this vector
      */
     public Vector2f normalize() {
@@ -369,6 +403,7 @@ public class Vector2f {
 
     /**
      * normalizes this vector to a specific length
+     *
      * @param l - the new length of this vector
      * @return - this vector
      */
@@ -380,6 +415,7 @@ public class Vector2f {
 
     /**
      * normalizes a vector
+     *
      * @param v - the vector to be normalized
      * @return - a new unit vector in the direction of v
      */
@@ -389,6 +425,7 @@ public class Vector2f {
 
     /**
      * normalizes a vector to a specific length
+     *
      * @param v - the vector to normalize
      * @param l - the new length
      * @return - a new vector in the direction of v with a length of l
@@ -399,6 +436,7 @@ public class Vector2f {
 
     /**
      * computes the distance between two vectors
+     *
      * @param v - the first vector
      * @param u - the second vector
      * @return - the distance between v and u
@@ -409,6 +447,7 @@ public class Vector2f {
 
     /**
      * getter method
+     *
      * @return - the x component of this vector
      */
     public float getX() {
@@ -417,6 +456,7 @@ public class Vector2f {
 
     /**
      * getter method
+     *
      * @return - the y component of this vector
      */
     public float getY() {
@@ -425,6 +465,7 @@ public class Vector2f {
 
     /**
      * getter method
+     *
      * @return - the i component of this vector
      */
     public float getI() {
@@ -433,6 +474,7 @@ public class Vector2f {
 
     /**
      * getter method
+     *
      * @return - the j component of this vector
      */
     public float getJ() {
@@ -441,6 +483,7 @@ public class Vector2f {
 
     /**
      * converts this 2-float vector to a float array
+     *
      * @return - the float array
      */
     public float[] toFloatArray() {
@@ -449,6 +492,7 @@ public class Vector2f {
 
     /**
      * determines the center point of 2 vectors
+     *
      * @param v - the first vector
      * @param u - the second vector
      * @return - a vector at the center point of the two vectors
@@ -459,6 +503,7 @@ public class Vector2f {
 
     /**
      * calculates the determinant of 2 vectors
+     *
      * @param v - the first vector
      * @param u - the second vector
      * @return - the determinant of the two vectors
@@ -469,6 +514,7 @@ public class Vector2f {
 
     /**
      * determines if this vector is equal to another object o
+     *
      * @param o - the other object
      * @return - true if this and o are both vectors with the same quantities
      */
@@ -482,6 +528,7 @@ public class Vector2f {
 
     /**
      * generates a hashcode of this vector
+     *
      * @return - the hashcode
      */
     @Override
@@ -491,6 +538,7 @@ public class Vector2f {
 
     /**
      * converts this vector to a string
+     *
      * @return - the string value of this vector
      */
     @Override

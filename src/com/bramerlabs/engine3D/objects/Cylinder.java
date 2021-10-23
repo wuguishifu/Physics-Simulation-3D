@@ -120,7 +120,7 @@ public class Cylinder extends RenderObject {
 
     private static Circle[] generateCircles(Vector3f p1, Vector3f p2, float radius, int numCircleVertices) {
         Vector3f normal = Vector3f.subtract(p1, p2);
-        return new Circle[] {
+        return new Circle[]{
                 new Circle(p1, radius, normal, numCircleVertices),
                 new Circle(p2, radius, normal, numCircleVertices)
         };

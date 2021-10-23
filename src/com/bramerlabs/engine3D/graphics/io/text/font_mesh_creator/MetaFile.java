@@ -36,11 +36,10 @@ public class MetaFile {
     /**
      * Opens a font file in preparation for reading.
      *
-     * @param file
-     *            - the font file.
+     * @param file - the font file.
      */
     protected MetaFile(File file) {
-        this.aspectRatio = 1920.0/1080.0;
+        this.aspectRatio = 1920.0 / 1080.0;
         openFile(file);
         loadPaddingData();
         loadLineSizes();
@@ -85,8 +84,7 @@ public class MetaFile {
      * Gets the {@code int} value of the variable with a certain name on the
      * current line.
      *
-     * @param variable
-     *            - the name of the variable.
+     * @param variable - the name of the variable.
      * @return The value of the variable.
      */
     private int getValueOfVariable(String variable) {
@@ -96,8 +94,7 @@ public class MetaFile {
     /**
      * Gets the array of ints associated with a variable on the current line.
      *
-     * @param variable
-     *            - the name of the variable.
+     * @param variable - the name of the variable.
      * @return The int array of values associated with the variable.
      */
     private int[] getValuesOfVariable(String variable) {
@@ -123,8 +120,7 @@ public class MetaFile {
     /**
      * Opens the font file, ready for reading.
      *
-     * @param file
-     *            - the font file.
+     * @param file - the font file.
      */
     private void openFile(File file) {
         try {
@@ -162,8 +158,7 @@ public class MetaFile {
      * Loads in data about each character and stores the data in the
      * {@link Character} class.
      *
-     * @param imageWidth
-     *            - the width of the texture atlas in pixels.
+     * @param imageWidth - the width of the texture atlas in pixels.
      */
     private void loadCharacterData(int imageWidth) {
         processNextLine();
@@ -181,8 +176,7 @@ public class MetaFile {
      * it all from 'pixels' to 'screen-space' before storing. The effects of
      * padding are also removed from the data.
      *
-     * @param imageSize
-     *            - the size of the texture atlas in pixels.
+     * @param imageSize - the size of the texture atlas in pixels.
      * @return The data about the character.
      */
     private Character loadCharacter(int imageSize) {

@@ -11,6 +11,7 @@ public class Key3 {
 
     /**
      * default constructor
+     *
      * @param x - the x value
      * @param y - the y value
      * @param z - the z value
@@ -23,6 +24,7 @@ public class Key3 {
 
     /**
      * constructor from int array
+     *
      * @param i - the int array
      */
     public Key3(int[] i) {
@@ -33,6 +35,7 @@ public class Key3 {
 
     /**
      * getter method
+     *
      * @return - the x value of this key
      */
     public int getX() {
@@ -41,6 +44,7 @@ public class Key3 {
 
     /**
      * sets the x value of this key
+     *
      * @param x - the new x value
      */
     public void setX(int x) {
@@ -49,6 +53,7 @@ public class Key3 {
 
     /**
      * getter method
+     *
      * @return - the y value of this key
      */
     public int getY() {
@@ -57,6 +62,7 @@ public class Key3 {
 
     /**
      * sets the y value of this key
+     *
      * @param y - the new y value
      */
     public void setY(int y) {
@@ -65,6 +71,7 @@ public class Key3 {
 
     /**
      * getter method
+     *
      * @return - the z value of this key
      */
     public int getZ() {
@@ -73,6 +80,7 @@ public class Key3 {
 
     /**
      * sets the z value of this key
+     *
      * @param z - the new z value of this key
      */
     public void setZ(int z) {
@@ -81,6 +89,7 @@ public class Key3 {
 
     /**
      * determines if this key is equal to another object
+     *
      * @param o - the other object
      * @return - true if the other object is a key with the same x, y value of these objects
      */
@@ -96,6 +105,7 @@ public class Key3 {
 
     /**
      * generates a hash code of this key
+     *
      * @return - the key's hash code
      */
     @Override
@@ -105,6 +115,7 @@ public class Key3 {
 
     /**
      * converts this key to a string
+     *
      * @return - the string representation of this key in the form 'k(x, y, z)'
      */
     @Override

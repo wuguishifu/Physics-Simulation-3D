@@ -27,11 +27,11 @@ public class FontShader extends ShaderProgram {
         super.bindAttribute(1, "textureCoords");
     }
 
-    protected void loadColour(Vector3f colour){
+    protected void loadColour(Vector3f colour) {
         super.loadVector(location_colour, colour);
     }
 
-    protected void loadTranslation(Vector2f translation){
+    protected void loadTranslation(Vector2f translation) {
         super.load2DVector(location_translation, translation);
     }
 

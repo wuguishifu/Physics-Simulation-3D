@@ -7,14 +7,9 @@ import com.bramerlabs.engine3D.graphics.io.window.Window;
 import com.bramerlabs.engine3D.graphics.io.window.WindowConstants;
 import com.bramerlabs.engine3D.graphics.renderers.Renderer;
 import com.bramerlabs.engine3D.math.vector.Vector3f;
-import com.bramerlabs.engine3D.math.vector.Vector4f;
-import com.bramerlabs.engine3D.objects.IcoSphere;
-import com.bramerlabs.physics_simulation_3d.simulations.bodies.MassPoint;
-import org.lwjgl.glfw.GLFW;
 import org.lwjgl.opengl.GL46;
 
 import java.awt.*;
-import java.util.ArrayList;
 
 public class SoftBodies implements Runnable {
 
@@ -66,7 +61,7 @@ public class SoftBodies implements Runnable {
     private void update() {
 //        if (input.isMouseButtonDown(GLFW.GLFW_MOUSE_BUTTON_LEFT)) window.mouseState(true);
 
-        body.update(1f/60f);
+        body.update(1f / 60f);
 
         window.update();
         GL46.glClearColor(window.r, window.g, window.b, 1.0f);

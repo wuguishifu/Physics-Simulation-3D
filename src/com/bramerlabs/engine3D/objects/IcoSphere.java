@@ -20,7 +20,7 @@ public class IcoSphere extends RenderObject {
         ColorVertex[] vertices = new ColorVertex[triangles.size() * 3];
         for (int i = 0; i < triangles.size(); i++) {
             Triangle t = triangles.get(i);
-            vertices[3 * i    ] = new ColorVertex(t.v1, t.v1, color);
+            vertices[3 * i] = new ColorVertex(t.v1, t.v1, color);
             vertices[3 * i + 1] = new ColorVertex(t.v2, t.v2, color);
             vertices[3 * i + 2] = new ColorVertex(t.v3, t.v3, color);
         }
@@ -31,19 +31,19 @@ public class IcoSphere extends RenderObject {
         return new ColorMesh(vertices, indices);
     }
 
-    private static final float PHI_OVER_TWO = 1.618033988749895f/2.0f;
+    private static final float PHI_OVER_TWO = 1.618033988749895f / 2.0f;
     private static final Vector3f[] v = new Vector3f[]{
-            new Vector3f( 0.5f, 0,  PHI_OVER_TWO),
-            new Vector3f( 0.5f, 0, -PHI_OVER_TWO),
-            new Vector3f(-0.5f, 0,  PHI_OVER_TWO),
+            new Vector3f(0.5f, 0, PHI_OVER_TWO),
+            new Vector3f(0.5f, 0, -PHI_OVER_TWO),
+            new Vector3f(-0.5f, 0, PHI_OVER_TWO),
             new Vector3f(-0.5f, 0, -PHI_OVER_TWO),
-            new Vector3f( PHI_OVER_TWO,  0.5f, 0),
-            new Vector3f( PHI_OVER_TWO, -0.5f, 0),
-            new Vector3f(-PHI_OVER_TWO,  0.5f, 0),
+            new Vector3f(PHI_OVER_TWO, 0.5f, 0),
+            new Vector3f(PHI_OVER_TWO, -0.5f, 0),
+            new Vector3f(-PHI_OVER_TWO, 0.5f, 0),
             new Vector3f(-PHI_OVER_TWO, -0.5f, 0),
-            new Vector3f(0,  PHI_OVER_TWO,  0.5f),
-            new Vector3f(0,  PHI_OVER_TWO, -0.5f),
-            new Vector3f(0, -PHI_OVER_TWO,  0.5f),
+            new Vector3f(0, PHI_OVER_TWO, 0.5f),
+            new Vector3f(0, PHI_OVER_TWO, -0.5f),
+            new Vector3f(0, -PHI_OVER_TWO, 0.5f),
             new Vector3f(0, -PHI_OVER_TWO, -0.5f),
     };
 
@@ -84,9 +84,9 @@ public class IcoSphere extends RenderObject {
         Vector3f v12 = Vector3f.normalize(new Vector3f(v1.x + v2.x, v1.y + v2.y, v1.z + v2.z));
         Vector3f v23 = Vector3f.normalize(new Vector3f(v2.x + v3.x, v2.y + v3.y, v2.z + v3.z));
         Vector3f v31 = Vector3f.normalize(new Vector3f(v3.x + v1.x, v3.y + v1.y, v3.z + v1.z));
-        faces.addAll(subdivide( v1, v12, v31, depth - 1));
-        faces.addAll(subdivide( v2, v23, v12, depth - 1));
-        faces.addAll(subdivide( v3, v31, v23, depth - 1));
+        faces.addAll(subdivide(v1, v12, v31, depth - 1));
+        faces.addAll(subdivide(v2, v23, v12, depth - 1));
+        faces.addAll(subdivide(v3, v31, v23, depth - 1));
         faces.addAll(subdivide(v12, v23, v31, depth - 1));
         return faces;
     }

@@ -27,7 +27,7 @@ public class ColorMesh extends Mesh {
         float[] colorData = new float[vertices.length * 4];
         for (int i = 0; i < vertices.length; i++) {
             ColorVertex vertex = (ColorVertex) vertices[i];
-            colorData[4 * i    ] = vertex.getColor().x;
+            colorData[4 * i] = vertex.getColor().x;
             colorData[4 * i + 1] = vertex.getColor().y;
             colorData[4 * i + 2] = vertex.getColor().z;
             colorData[4 * i + 3] = vertex.getColor().w;

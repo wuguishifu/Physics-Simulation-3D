@@ -37,8 +37,8 @@ public class Window {
         this.b = backgroundColor.z;
 
         this.displayMode = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDisplayMode();
-        this.defaultWidth = displayMode.getWidth()/2;
-        this.defaultHeight = displayMode.getHeight()/2;
+        this.defaultWidth = displayMode.getWidth() / 2;
+        this.defaultHeight = displayMode.getHeight() / 2;
 
         this.width = defaultWidth;
         this.height = defaultHeight;
@@ -65,10 +65,10 @@ public class Window {
 
         GLFWVidMode vidMode = GLFW.glfwGetVideoMode(GLFW.glfwGetPrimaryMonitor());
         assert vidMode != null;
-        GLFW.glfwSetWindowSize(windowHandle, vidMode.width()/2, vidMode.height()/2);
-        GLFW.glfwSetWindowPos(windowHandle, vidMode.width()/4, vidMode.height()/4);
-        input.setWindowX(vidMode.width()/4);
-        input.setWindowY(vidMode.height()/4);
+        GLFW.glfwSetWindowSize(windowHandle, vidMode.width() / 2, vidMode.height() / 2);
+        GLFW.glfwSetWindowPos(windowHandle, vidMode.width() / 4, vidMode.height() / 4);
+        input.setWindowX(vidMode.width() / 4);
+        input.setWindowY(vidMode.height() / 4);
 //        GLFW.glfwSetWindowSize(windowHandle, width, height);
 //        GLFW.glfwSetWindowPos(windowHandle, 0, 0);
 //        input.setWindowX(0);
@@ -146,6 +146,7 @@ public class Window {
 
     /**
      * sets the current mouse state of the window
+     *
      * @param lock - whether or not the mouse should be locked
      */
     public void mouseState(boolean lock) {

@@ -39,9 +39,10 @@ public class Camera {
 
     /**
      * default constructor for specified position, rotation, and input object
+     *
      * @param position - the position of the camera object
      * @param rotation - the rotation of the camera object
-     * @param input - the callback input object
+     * @param input    - the callback input object
      */
     public Camera(Vector3f position, Vector3f rotation, Input input) {
         this.position = position;
@@ -52,6 +53,7 @@ public class Camera {
 
     /**
      * sets the distance of the camera
+     *
      * @param distance - the new distance
      */
     public void setDistance(float distance) {
@@ -72,6 +74,7 @@ public class Camera {
 
     /**
      * sets the vector that the arcball camera is looking at
+     *
      * @param v - the position the camera is rotating around
      */
     public void setFocus(Vector3f v) {
@@ -86,18 +89,19 @@ public class Camera {
         newMouseX = input.getMouseX();
         newMouseY = input.getMouseY();
 
-        float x = (float)Math.sin(Math.toRadians(rotation.getY())) * moveSpeed;
-        float z = (float)Math.cos(Math.toRadians(rotation.getY())) * moveSpeed;
+        float x = (float) Math.sin(Math.toRadians(rotation.getY())) * moveSpeed;
+        float z = (float) Math.cos(Math.toRadians(rotation.getY())) * moveSpeed;
 
         // handle the WASD keys
-        if (input.isKeyDown(GLFW.GLFW_KEY_A)) position = Vector3f.add(position, new Vector3f(-z, 0,  x));
-        if (input.isKeyDown(GLFW.GLFW_KEY_D)) position = Vector3f.add(position, new Vector3f( z, 0, -x));
+        if (input.isKeyDown(GLFW.GLFW_KEY_A)) position = Vector3f.add(position, new Vector3f(-z, 0, x));
+        if (input.isKeyDown(GLFW.GLFW_KEY_D)) position = Vector3f.add(position, new Vector3f(z, 0, -x));
         if (input.isKeyDown(GLFW.GLFW_KEY_W)) position = Vector3f.add(position, new Vector3f(-x, 0, -z));
-        if (input.isKeyDown(GLFW.GLFW_KEY_S)) position = Vector3f.add(position, new Vector3f( x, 0,  z));
+        if (input.isKeyDown(GLFW.GLFW_KEY_S)) position = Vector3f.add(position, new Vector3f(x, 0, z));
 
         // handle going up and down
         if (input.isKeyDown(GLFW.GLFW_KEY_SPACE)) position = Vector3f.add(position, new Vector3f(0, moveSpeed, 0));
-        if (input.isKeyDown(GLFW.GLFW_KEY_LEFT_SHIFT)) position = Vector3f.add(position, new Vector3f(0, -moveSpeed, 0));
+        if (input.isKeyDown(GLFW.GLFW_KEY_LEFT_SHIFT))
+            position = Vector3f.add(position, new Vector3f(0, -moveSpeed, 0));
 
         // handle mouse motion
         float dx = (float) (newMouseX - oldMouseX);
@@ -253,6 +257,7 @@ public class Camera {
 
     /**
      * rotates the camera but some angle
+     *
      * @param dTheta - the change in the angle
      */
     public void incHorizontalAngle(float dTheta) {
@@ -261,6 +266,7 @@ public class Camera {
 
     /**
      * getter method
+     *
      * @return - the position of this camera
      */
     public Vector3f getPosition() {
@@ -269,6 +275,7 @@ public class Camera {
 
     /**
      * getter method
+     *
      * @return - the rotation of this camera
      */
     public Vector3f getRotation() {
@@ -277,6 +284,7 @@ public class Camera {
 
     /**
      * getter method
+     *
      * @return - the vertical angle
      */
     public float getVerticalAngle() {
@@ -285,6 +293,7 @@ public class Camera {
 
     /**
      * getter method
+     *
      * @return - the horizontal angle
      */
     public float getHorizontalAngle() {
@@ -293,6 +302,7 @@ public class Camera {
 
     /**
      * getter method
+     *
      * @return - the point this camera is looking at
      */
     public Vector3f getLookingAt() {
@@ -301,6 +311,7 @@ public class Camera {
 
     /**
      * getter method
+     *
      * @return - the horizontal distance to the looking position
      */
     public float getHorizontalDistance() {
@@ -309,6 +320,7 @@ public class Camera {
 
     /**
      * getter method
+     *
      * @return - the vertical distance to the looking position
      */
     public float getVerticalDistance() {

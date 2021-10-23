@@ -34,8 +34,9 @@ public class Matrix3f {
 
     /**
      * sets a value of the matrix
-     * @param x - the column (x, y) cartesian coordinates
-     * @param y - the row
+     *
+     * @param x     - the column (x, y) cartesian coordinates
+     * @param y     - the row
      * @param value - the value to be set
      */
     public void set(int x, int y, float value) {
@@ -44,6 +45,7 @@ public class Matrix3f {
 
     /**
      * creates an identity matrix
+     *
      * @return - the 3I identity matrix
      */
     public static Matrix3f identity() {
@@ -56,6 +58,7 @@ public class Matrix3f {
 
     /**
      * creates a scalar identity matrix
+     *
      * @param scaleFactor - the scale factor
      * @return - the n3I identity matrix
      */
@@ -69,6 +72,7 @@ public class Matrix3f {
 
     /**
      * creates a scale matrix by some group of scalars
+     *
      * @param scalar - a vector with all the scalars to scale the matrix by
      * @return - a matrix representing the scale operations specified by the scalar vector
      */
@@ -84,8 +88,9 @@ public class Matrix3f {
 
     /**
      * multiplies two matrices together
+     *
      * @param matrix - matrix 1
-     * @param other - matrix 2
+     * @param other  - matrix 2
      * @return - a new Matrix, A x B
      */
     public static Matrix4f multiply(Matrix3f matrix, Matrix3f other) {
@@ -104,6 +109,7 @@ public class Matrix3f {
 
     /**
      * gets the value at a certain (x, y) position
+     *
      * @param x - the column
      * @param y - the row
      * @return - the value at (x, y) starting at the top left
@@ -114,6 +120,7 @@ public class Matrix3f {
 
     /**
      * getter method
+     *
      * @return - the elements of this matrix
      */
     public float[] getAll() {
@@ -122,6 +129,7 @@ public class Matrix3f {
 
     /**
      * converts the matrix to a float buffer
+     *
      * @param value - the matrix to be converted
      * @return - a float buffer object
      */
@@ -133,6 +141,7 @@ public class Matrix3f {
 
     /**
      * determines if two matrices are exactly identical
+     *
      * @param o - the other object
      * @return - true if both objects are matrices that are exactly equal
      */
@@ -153,7 +162,8 @@ public class Matrix3f {
 
     /**
      * determines if two matrices are almost identical, with an error maximum of epsilon
-     * @param o - the other object
+     *
+     * @param o       - the other object
      * @param epsilon - the max error
      * @return - true if both objects are matrices that are nearly equal
      */
@@ -173,6 +183,7 @@ public class Matrix3f {
 
     /**
      * generates a hashcode based on the elements of this matrix
+     *
      * @return - a unique hashcode
      */
     @Override
@@ -182,11 +193,12 @@ public class Matrix3f {
 
     /**
      * generates a string version of this matrix
+     *
      * @return - a string
      */
     @Override
     public String toString() {
-        return  "|" + get(0, 0) + "  " + get(0, 1) + "  " + get(0, 2) + "|\n" +
+        return "|" + get(0, 0) + "  " + get(0, 1) + "  " + get(0, 2) + "|\n" +
                 "|" + get(1, 0) + "  " + get(1, 1) + "  " + get(1, 2) + "|\n" +
                 "|" + get(2, 0) + "  " + get(2, 1) + "  " + get(2, 2) + "|\n";
     }

@@ -16,16 +16,16 @@ public class TextMaster {
 
     private static Loader loader;
 
-    public static void init(Loader theLoader){
+    public static void init(Loader theLoader) {
         renderer = new FontRenderer();
         loader = theLoader;
     }
 
-    public static void render(){
+    public static void render() {
         renderer.render(texts);
     }
 
-    public static void loadText(GUIText text){
+    public static void loadText(GUIText text) {
         FontType font = text.getFont();
         TextMeshData data = font.loadText(text);
         int vao = loader.loadToVAO(data.getVertexPositions(), data.getTextureCoords());
@@ -34,16 +34,16 @@ public class TextMaster {
         textBatch.add(text);
     }
 
-    public static void removeText(GUIText text){
+    public static void removeText(GUIText text) {
         List<GUIText> textBatch = texts.get(text.getFont());
         textBatch.remove(text);
-        if(textBatch.isEmpty()){
+        if (textBatch.isEmpty()) {
             FontType f = (FontType) texts.get(text.getFont());
             texts.remove(f);
         }
     }
 
-    public static void cleanUp(){
+    public static void cleanUp() {
         renderer.cleanUp();
     }
 

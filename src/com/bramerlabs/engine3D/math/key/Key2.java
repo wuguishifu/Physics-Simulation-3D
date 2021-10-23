@@ -11,6 +11,7 @@ public class Key2 {
 
     /**
      * default constructor
+     *
      * @param x - the x value
      * @param y - the y value
      */
@@ -21,6 +22,7 @@ public class Key2 {
 
     /**
      * constructor from int array
+     *
      * @param i - the int array
      */
     public Key2(int[] i) {
@@ -30,6 +32,7 @@ public class Key2 {
 
     /**
      * sets the x value
+     *
      * @param x - the x value
      */
     public void setX(int x) {
@@ -38,6 +41,7 @@ public class Key2 {
 
     /**
      * sets the y value
+     *
      * @param y - the y value
      */
     public void setY(int y) {
@@ -46,6 +50,7 @@ public class Key2 {
 
     /**
      * getter method
+     *
      * @return - the x value
      */
     public int getX() {
@@ -54,6 +59,7 @@ public class Key2 {
 
     /**
      * getter method
+     *
      * @return - the y value
      */
     public int getY() {
@@ -62,6 +68,7 @@ public class Key2 {
 
     /**
      * converts this to a int array
+     *
      * @return - the int array
      */
     public int[] asIntArray() {
@@ -70,6 +77,7 @@ public class Key2 {
 
     /**
      * determines if this key is equal to another object
+     *
      * @param o - the other object
      * @return - true if the other object is a key with the same x, y value of these objects
      */
@@ -84,6 +92,7 @@ public class Key2 {
 
     /**
      * generates a hash code of this key
+     *
      * @return - the key's hash code
      */
     @Override
@@ -93,6 +102,7 @@ public class Key2 {
 
     /**
      * converts this key to a string
+     *
      * @return - the string representation of this key in the form 'k(x, y)'
      */
     @Override

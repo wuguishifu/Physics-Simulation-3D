@@ -20,6 +20,7 @@ public class Vector4f {
 
     /**
      * default constructor
+     *
      * @param x - the x component
      * @param y - the y component
      * @param z - the z component
@@ -34,6 +35,7 @@ public class Vector4f {
 
     /**
      * constructor for 1 specified value
+     *
      * @param val - the value for all four components to be set to
      */
     public Vector4f(float val) {
@@ -45,6 +47,7 @@ public class Vector4f {
 
     /**
      * constructor for duplicating a vector
+     *
      * @param v - the vector to duplicate
      */
     public Vector4f(Vector4f v) {
@@ -56,6 +59,7 @@ public class Vector4f {
 
     /**
      * constructor for a vector from a 3-float vector and a float w component
+     *
      * @param v - the 3-float vector
      * @param w - the w component
      */
@@ -68,10 +72,11 @@ public class Vector4f {
 
     /**
      * constructor from a float array
+     *
      * @param v - a float array containing values in form [x, y, z, w]
-     * method will automatically set the position based off of available variables.
-     * No minimum or maximum necessary supplied variables, if more than 4 are supplied the vector
-     * will be constructed out of the first 4.
+     *          method will automatically set the position based off of available variables.
+     *          No minimum or maximum necessary supplied variables, if more than 4 are supplied the vector
+     *          will be constructed out of the first 4.
      */
     public Vector4f(float[] v) {
         x = v.length > 0 ? v[0] : 0;
@@ -82,6 +87,7 @@ public class Vector4f {
 
     /**
      * sets each component of this vector
+     *
      * @param x - the x component
      * @param y - the y component
      * @param z - the z component
@@ -96,6 +102,7 @@ public class Vector4f {
 
     /**
      * sets the x component of this vector
+     *
      * @param x - the new x value
      */
     public void setX(float x) {
@@ -104,6 +111,7 @@ public class Vector4f {
 
     /**
      * sets the y component of this vector
+     *
      * @param y - the new y value
      */
     public void setY(float y) {
@@ -112,6 +120,7 @@ public class Vector4f {
 
     /**
      * sets the z component of this vector
+     *
      * @param z - the new z value
      */
     public void setZ(float z) {
@@ -120,6 +129,7 @@ public class Vector4f {
 
     /**
      * sets the w component of this vector
+     *
      * @param w - the new w value
      */
     public void setW(float w) {
@@ -128,6 +138,7 @@ public class Vector4f {
 
     /**
      * adds values to each component to this vector
+     *
      * @param dx - the change in x component
      * @param dy - the change in y component
      * @param dz - the change in z component
@@ -144,6 +155,7 @@ public class Vector4f {
 
     /**
      * adds a vector to this vector
+     *
      * @param v - the vector to be added to this vector
      * @return - this vector
      */
@@ -157,7 +169,8 @@ public class Vector4f {
 
     /**
      * adds values to each component of a vector
-     * @param v - the vector to add to
+     *
+     * @param v  - the vector to add to
      * @param dx - the change in x component
      * @param dy - the change in y component
      * @param dz - the change in z component
@@ -170,6 +183,7 @@ public class Vector4f {
 
     /**
      * adds two vectors together
+     *
      * @param v - vector 1
      * @param u - vector 2
      * @return - a new vector, the sum of v and u
@@ -180,6 +194,7 @@ public class Vector4f {
 
     /**
      * subtracts values to each component to this vector
+     *
      * @param dx - the change in x component
      * @param dy - the change in y component
      * @param dz - the change in z component
@@ -196,6 +211,7 @@ public class Vector4f {
 
     /**
      * subtracts a vector to this vector
+     *
      * @param v - the vector to be added to this vector
      * @return - this vector
      */
@@ -209,7 +225,8 @@ public class Vector4f {
 
     /**
      * subtracts values to each component of a vector
-     * @param v - the vector to add to
+     *
+     * @param v  - the vector to add to
      * @param dx - the change in x component
      * @param dy - the change in y component
      * @param dz - the change in z component
@@ -222,6 +239,7 @@ public class Vector4f {
 
     /**
      * subtracts two vectors together
+     *
      * @param v - vector 1
      * @param u - vector 2
      * @return - a new vector, the sum of v and u
@@ -232,6 +250,7 @@ public class Vector4f {
 
     /**
      * multiplies the components of this vector by values
+     *
      * @param mx - the multiplication factor of the x component
      * @param my - the multiplication factor of the y component
      * @param mz - the multiplication factor of the z component
@@ -248,6 +267,7 @@ public class Vector4f {
 
     /**
      * multiplies the components of this vector by the components of another vector
+     *
      * @param v - the other vector
      * @return - this vector
      */
@@ -261,7 +281,8 @@ public class Vector4f {
 
     /**
      * multiplies the components of a vector by values
-     * @param v - the vector
+     *
+     * @param v  - the vector
      * @param mx - the multiplication factor of the x component
      * @param my - the multiplication factor of the y component
      * @param mz - the multiplication factor of the z component
@@ -274,6 +295,7 @@ public class Vector4f {
 
     /**
      * multiplies the components of one vector by the components of another vector
+     *
      * @param v - the first vector
      * @param u - the second vector
      * @return - a vector where the values are the straight multiplication of v and u
@@ -284,6 +306,7 @@ public class Vector4f {
 
     /**
      * divides the components of this vector by values
+     *
      * @param mx - the division factor of the x component
      * @param my - the division factor of the y component
      * @param mz - the division factor of the z component
@@ -300,6 +323,7 @@ public class Vector4f {
 
     /**
      * divides the components of this vector by the components of another vector
+     *
      * @param v - the other vector
      * @return - this vector
      */
@@ -313,7 +337,8 @@ public class Vector4f {
 
     /**
      * divides the components of a vector by values
-     * @param v - the vector
+     *
+     * @param v  - the vector
      * @param mx - the division factor of the x component
      * @param my - the division factor of the y component
      * @param mz - the division factor of the z component
@@ -326,6 +351,7 @@ public class Vector4f {
 
     /**
      * divides the components of one vector by the components of another vector
+     *
      * @param v - the first vector
      * @param u - the second vector
      * @return - a vector where the values are the straight multiplication of v and u
@@ -336,6 +362,7 @@ public class Vector4f {
 
     /**
      * dots this vector with another vector
+     *
      * @param v - the other vector
      * @return - the dot product of this vector and the other vector
      */
@@ -345,6 +372,7 @@ public class Vector4f {
 
     /**
      * dots two vectors together
+     *
      * @param v - the first vector
      * @param u - the second vector
      * @return - the dot product u dot v
@@ -355,6 +383,7 @@ public class Vector4f {
 
     /**
      * computes the length of this vector
+     *
      * @return - the length
      */
     public float length() {
@@ -363,6 +392,7 @@ public class Vector4f {
 
     /**
      * computes the length of a vector
+     *
      * @param v - the vector
      * @return - the length of vector v
      */
@@ -372,6 +402,7 @@ public class Vector4f {
 
     /**
      * normalizes this vector
+     *
      * @return - this vector
      */
     public Vector4f normalize() {
@@ -384,6 +415,7 @@ public class Vector4f {
 
     /**
      * normalizes this vector to a specific length
+     *
      * @param l - the new length of this vector
      * @return - this vector
      */
@@ -397,6 +429,7 @@ public class Vector4f {
 
     /**
      * normalizes a vector
+     *
      * @param v - the vector
      * @return - a new vector with length 1 in the same direction of v
      */
@@ -411,6 +444,7 @@ public class Vector4f {
 
     /**
      * normalizes a vector to a specific length
+     *
      * @param v - the vector
      * @param l - the new length
      * @return - a new vector with length 1 in the same direction of v
@@ -426,6 +460,7 @@ public class Vector4f {
 
     /**
      * getter method
+     *
      * @return - the x value of this vector
      */
     public float getX() {
@@ -434,6 +469,7 @@ public class Vector4f {
 
     /**
      * getter method
+     *
      * @return - the y value of this vector
      */
     public float getY() {
@@ -442,6 +478,7 @@ public class Vector4f {
 
     /**
      * getter method
+     *
      * @return - the z value of this vector
      */
     public float getZ() {
@@ -450,6 +487,7 @@ public class Vector4f {
 
     /**
      * getter method
+     *
      * @return - the w value of this vector
      */
     public float getW() {
@@ -458,6 +496,7 @@ public class Vector4f {
 
     /**
      * getter method
+     *
      * @return - the i value of this vector
      */
     public float getI() {
@@ -466,6 +505,7 @@ public class Vector4f {
 
     /**
      * getter method
+     *
      * @return - the j value of this vector
      */
     public float getJ() {
@@ -474,6 +514,7 @@ public class Vector4f {
 
     /**
      * getter method
+     *
      * @return - the k value of this vector
      */
     public float getK() {
@@ -482,6 +523,7 @@ public class Vector4f {
 
     /**
      * getter method
+     *
      * @return - the l value of this vector
      */
     public float getL() {
@@ -490,6 +532,7 @@ public class Vector4f {
 
     /**
      * getter method
+     *
      * @return - the first 3 values in a 3-float vector
      */
     public Vector3f xyz() {
@@ -498,6 +541,7 @@ public class Vector4f {
 
     /**
      * converts this 4-float vector to a float array
+     *
      * @return - the float array
      */
     public float[] toFloatArray() {
@@ -506,6 +550,7 @@ public class Vector4f {
 
     /**
      * determines if two vectors are exactly identical
+     *
      * @param o - the other object
      * @return - true if this and o are both vectors that are exactly equal
      */
@@ -519,7 +564,8 @@ public class Vector4f {
 
     /**
      * determines if two vectors are nearly identical
-     * @param o - the other object
+     *
+     * @param o       - the other object
      * @param epsilon - the max error
      * @return - true if this and o are both vectors and the absolute error for each component is less than epsilon
      */
@@ -538,6 +584,7 @@ public class Vector4f {
 
     /**
      * creates a hashcode of this vector
+     *
      * @return - the hashcode
      */
     @Override
@@ -547,6 +594,7 @@ public class Vector4f {
 
     /**
      * converts this vector to a string
+     *
      * @return - the string value of this vector
      */
     @Override
