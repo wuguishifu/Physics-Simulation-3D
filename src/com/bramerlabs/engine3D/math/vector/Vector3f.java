@@ -85,9 +85,13 @@ public class Vector3f {
      * @param c - the color
      */
     public Vector3f(Color c) {
-        this.x = c.getRed();
-        this.y = c.getGreen();
-        this.z = c.getBlue();
+        this.x = c.getRed() / 255.0f;
+        this.y = c.getGreen() / 255.0f;
+        this.z = c.getBlue() / 255.0f;
+    }
+
+    public static Vector3f fromAngle(float angle) {
+        return new Vector3f((float) Math.cos(Math.toRadians(angle)), 0, (float) Math.sin(Math.toRadians(angle)));
     }
 
     /**
@@ -124,6 +128,10 @@ public class Vector3f {
      */
     public void setZ(float z) {
         this.z = z;
+    }
+
+    public static Vector3f invert(Vector3f v) {
+        return new Vector3f(-v.x, -v.y, -v.z);
     }
 
     /**
@@ -251,7 +259,7 @@ public class Vector3f {
      * @param mz - the multiplication factor of the z component
      * @return - this vector
      */
-    public Vector3f multiply(float mx, float my, float mz) {
+    public Vector3f scalarMultiply(float mx, float my, float mz) {
         this.x *= mx;
         this.y *= my;
         this.z *= mz;
@@ -263,7 +271,7 @@ public class Vector3f {
      * @param v - the other vector
      * @return - this vector
      */
-    public Vector3f multiply(Vector3f v) {
+    public Vector3f scalarMultiply(Vector3f v) {
         this.x *= v.x;
         this.y *= v.y;
         this.z *= v.z;
@@ -278,7 +286,7 @@ public class Vector3f {
      * @param mz - the multiplication factor of the z component
      * @return - a new vector
      */
-    public static Vector3f multiply(Vector3f v, float mx, float my, float mz) {
+    public static Vector3f scalarMultiply(Vector3f v, float mx, float my, float mz) {
         return new Vector3f(v.x * mx, v.y * my, v.z * mz);
     }
 
@@ -288,7 +296,7 @@ public class Vector3f {
      * @param u - the second vector
      * @return - a vector where the values are the straight multiplication of v and u
      */
-    public static Vector3f multiply(Vector3f v, Vector3f u) {
+    public static Vector3f scalarMultiply(Vector3f v, Vector3f u) {
         return new Vector3f(v.x * u.x, v.y * u.y, v.z * u.z);
     }
 
@@ -443,6 +451,10 @@ public class Vector3f {
         return Vector3f.divide(v, new Vector3f(length(v)));
     }
 
+    public static Vector3f normalize(float x, float y, float z) {
+        return Vector3f.normalize(new Vector3f(x, y, z));
+    }
+
     /**
      * normalizes a vector to a specific length
      * @param v - the vector
@@ -460,7 +472,7 @@ public class Vector3f {
      * @return - the length between vector 1 and vector 2
      */
     public static float distance(Vector3f v, Vector3f u) {
-        return length(multiply(subtract(u, v), subtract(u, v)));
+        return Vector3f.length(Vector3f.subtract(u, v));
     }
 
     /**
@@ -480,7 +492,19 @@ public class Vector3f {
      * @return - the angle between
      */
     public static float angleBetween(Vector3f v, Vector3f u) {
-        return (float) Math.acos(Vector3f.dot(v, u) * quickInverseSqrt(v) * quickInverseSqrt(u));
+        float product = (Vector3f.dot(v, u) * (1 / length(v)) * (1 / length(u)));
+        return (float) Math.toDegrees(Math.acos(product));
+        // note (bo): not sure if its required to manually check negatives for Math.acos()
+//        if (product > 0) {
+//            return (float) Math.toDegrees(Math.acos(product));
+//        } else {
+//            product = -product;
+//            return (float) (Math.PI - Math.toDegrees(Math.acos(product)));
+//        }
+
+        // note (bo): quick inverse sqrt seems to have a pretty high approximate error, I've replaced it with actual inv
+        // sqrt calculations and commented out the code.
+        // return (float) Math.toDegrees(Math.acos(Vector3f.dot(v, u) * quickInverseSqrt(v) * quickInverseSqrt(u)));
     }
 
     /**
@@ -490,11 +514,11 @@ public class Vector3f {
      */
     public static float quickInverseSqrt(Vector3f v) {
         float val = v.x * v.x + v.y * v.y + v.z * v.z;
-        float xHalf = 0.5f * val;
+        float xHalf = 0.5f * val; // evil floating point bit
         int i = Float.floatToIntBits(val);
-        i = 0x5f3759df - (i >> 1);
+        i = 0x5f3759df - (i >> 1); // what the fuck?
         val = Float.intBitsToFloat(i);
-        val *= (1.5f - xHalf * val * val);
+        val *= (1.5f - xHalf * val * val); // 1st iteration
         return val;
     }
 
@@ -512,11 +536,11 @@ public class Vector3f {
     /**
      * rotates a vector around an axis
      * @param v - the vector to rotate
-     * @param angle - the angle to rotate it by
      * @param axis - the axis to rotate it around
+     * @param angle - the angle to rotate it by
      * @return - the new rotated vector
      */
-    public static Vector3f rotate(Vector3f v, float angle, Vector3f axis) {
+    public static Vector3f rotate(Vector3f v, Vector3f axis, float angle) {
         Matrix4f rotationMatrix = Matrix4f.rotate(angle, axis);
         Vector4f result = Matrix4f.multiply(rotationMatrix, new Vector4f(v, 1.0f));
         return result.xyz();
@@ -669,6 +693,9 @@ public class Vector3f {
     @Override
     public String toString() {
         DecimalFormat df2 = new DecimalFormat("#,###,###,#00.00");
+//        String xS = String.format("%6s", df2.format(this.x));
+//        String yS = String.format("%6s", df2.format(this.y));
+//        String zS = String.format("%6s", df2.format(this.z));
         String xS = df2.format(this.x);
         String yS = df2.format(this.y);
         String zS = df2.format(this.z);

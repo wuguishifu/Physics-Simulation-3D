@@ -11,7 +11,7 @@ public class WindowConstants {
 
     public WindowConstants(String name, Color backgroundColor) {
         this.name = name;
-        this.backgroundColor = new Vector3f(backgroundColor).scale(1/255f);
+        this.backgroundColor = new Vector3f(backgroundColor);
     }
 
 }

@@ -1,20 +1,18 @@
 package com.bramerlabs.engine3D.test;
 
 import com.bramerlabs.engine3D.graphics.Camera;
-import com.bramerlabs.engine3D.graphics.Material;
 import com.bramerlabs.engine3D.graphics.Shader;
 import com.bramerlabs.engine3D.graphics.io.window.Input;
 import com.bramerlabs.engine3D.graphics.io.window.Window;
 import com.bramerlabs.engine3D.graphics.io.window.WindowConstants;
 import com.bramerlabs.engine3D.graphics.renderers.Renderer;
-import com.bramerlabs.engine3D.math.matrix.Matrix4f;
 import com.bramerlabs.engine3D.math.vector.Vector3f;
-import com.bramerlabs.engine3D.objects.ObjectLoader;
-import com.bramerlabs.engine3D.objects.RenderObject;
+import com.bramerlabs.engine3D.math.vector.Vector4f;
+import com.bramerlabs.engine3D.objects.Cube;
+import com.bramerlabs.engine3D.objects.IcoSphere;
 import org.lwjgl.opengl.GL46;
 
-import java.awt.Color;
-import java.util.ArrayList;
+import java.awt.*;
 
 public class Test implements Runnable {
 
@@ -25,9 +23,8 @@ public class Test implements Runnable {
     private Shader shader;
     private Renderer renderer;
 
-    private RenderObject object;
-
-    ArrayList<Matrix4f> models = new ArrayList<>();
+    private IcoSphere sphere;
+    private Cube cube;
 
     public static void main(String[] args) {
         new Test().start();
@@ -57,51 +54,36 @@ public class Test implements Runnable {
         window.create();
         camera.setFocus(new Vector3f(0, 0, 0));
 
-//        shader = new Shader("shaders/cel/vertex.glsl", "shaders/cel/fragment.glsl");
-        shader = new Shader("shaders/textured/vertex.glsl", "shaders/textured/fragment.glsl");
+        shader = new Shader("shaders/colored/vertex.glsl", "shaders/colored/fragment.glsl");
         shader.create();
 
-        renderer = new Renderer(window, new Vector3f(-5, 20, 10));
+        renderer = new Renderer(window, new Vector3f(5, 20, 10));
 
-        Material birch = new Material(
-                "textures/birch/base.png",
-                "textures/birch/specular.png",
-                "textures/birch/normal.png");
-        birch.create();
+        sphere = new IcoSphere(new Vector3f(-1, 0, 0), new Vector4f(0.5f, 0.5f, 0.5f, 1.0f), 1.0f);
+        sphere.createMesh();
 
-        object = ObjectLoader.parseTexture("resources/objects/birch.obj", birch);
-        object.setScale(new Vector3f(1, 1, 1));
-        object.createMesh();
+        cube = new Cube(new Vector3f(1, 0, 0), new Vector3f(0), new Vector3f(1), new Vector4f(0.5f, 0.0f, 0.5f, 1.0f));
+        cube.createMesh();
 
-        int radius = 10;
-        for (int i = -radius; i <= radius; i++) {
-            for (int j = -radius; j <= radius; j++) {
-                Vector3f position = new Vector3f((float) (i + Math.random()), -2, (float) (j + Math.random()));
-                Vector3f scale = new Vector3f(10, 10, 10);
-                Vector3f rotation = new Vector3f(0, (float) (360 * Math.random()), 0);
-                models.add(Matrix4f.transform(position, rotation, scale));
-            }
-        }
     }
 
     private void update() {
         window.update();
         GL46.glClearColor(window.r, window.g, window.b, 1.0f);
         GL46.glClear(GL46.GL_COLOR_BUFFER_BIT | GL46.GL_DEPTH_BUFFER_BIT);
-        camera.updateArcball();
+        camera.update();
     }
 
     private void render() {
-        for (Matrix4f model : models) {
-            renderer.renderInstancedTexturedMesh(object, camera, shader, model);
-        }
+        renderer.renderMesh(sphere, camera, shader);
+        renderer.renderMesh(cube, camera, shader);
         window.swapBuffers();
     }
 
     private void close() {
         window.destroy();
         shader.destroy();
-        object.destroy();
+        sphere.destroy();
     }
 
 }

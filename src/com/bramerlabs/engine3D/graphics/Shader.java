@@ -20,9 +20,9 @@ public class Shader {
         this.fragmentFile = FileLoader.load(fragmentPath);
     }
 
-    public Shader(String shaderRoot) {
-        this.vertexFile = FileLoader.load(shaderRoot + "/vertex.glsl");
-        this.fragmentFile = FileLoader.load(shaderRoot + "/fragment.glsl");
+    public Shader(String shaderFile) {
+        this.vertexFile = FileLoader.load(shaderFile + "/vertex.glsl");
+        this.fragmentFile = FileLoader.load(shaderFile + "/fragment.glsl");
     }
 
     public void create() {

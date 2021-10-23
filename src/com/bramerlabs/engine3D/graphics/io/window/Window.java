@@ -15,7 +15,7 @@ public class Window {
     private String title;
     private static final int framerateCapped = GLFW.GLFW_TRUE;
     private DisplayMode displayMode;
-    private int width, height;
+    public int width, height;
     private int defaultWidth, defaultHeight;
 
     public Vector3f backgroundColor;
@@ -69,11 +69,15 @@ public class Window {
         GLFW.glfwSetWindowPos(windowHandle, vidMode.width()/4, vidMode.height()/4);
         input.setWindowX(vidMode.width()/4);
         input.setWindowY(vidMode.height()/4);
+//        GLFW.glfwSetWindowSize(windowHandle, width, height);
+//        GLFW.glfwSetWindowPos(windowHandle, 0, 0);
+//        input.setWindowX(0);
+//        input.setWindowY(0);
 
         GLFW.glfwMakeContextCurrent(windowHandle);
         GL.createCapabilities();
 
-//        GL11.glEnable(GL11.GL_CULL_FACE);
+        GL11.glEnable(GL11.GL_CULL_FACE);
         GL11.glEnable(GL11.GL_DEPTH_TEST);
         GL11.glClear(GL11.GL_DEPTH_BUFFER_BIT);
         GL11.glDepthFunc(GL11.GL_LESS);
@@ -124,6 +128,7 @@ public class Window {
         GLFW.glfwSwapBuffers(windowHandle);
     }
 
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     public boolean shouldClose() {
         return GLFW.glfwWindowShouldClose(windowHandle);
     }
@@ -137,6 +142,11 @@ public class Window {
         GLFW.glfwSetWindowShouldClose(windowHandle, true);
         GLFW.glfwDestroyWindow(windowHandle);
         GLFW.glfwTerminate();
+    }
+
+    public void clear() {
+        GL46.glClearColor(this.r, this.g, this.b, 1.0f);
+        GL46.glClear(GL46.GL_COLOR_BUFFER_BIT | GL46.GL_DEPTH_BUFFER_BIT);
     }
 
     public Matrix4f getProjectionMatrix() {

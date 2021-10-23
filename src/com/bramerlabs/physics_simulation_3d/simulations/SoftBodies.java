@@ -1,7 +1,6 @@
 package com.bramerlabs.physics_simulation_3d.simulations;
 
 import com.bramerlabs.engine3D.graphics.Camera;
-import com.bramerlabs.engine3D.graphics.Material;
 import com.bramerlabs.engine3D.graphics.Shader;
 import com.bramerlabs.engine3D.graphics.io.window.Input;
 import com.bramerlabs.engine3D.graphics.io.window.Window;
@@ -9,9 +8,7 @@ import com.bramerlabs.engine3D.graphics.io.window.WindowConstants;
 import com.bramerlabs.engine3D.graphics.renderers.Renderer;
 import com.bramerlabs.engine3D.math.vector.Vector3f;
 import com.bramerlabs.engine3D.math.vector.Vector4f;
-import com.bramerlabs.engine3D.objects.Cube;
-import com.bramerlabs.engine3D.objects.ObjectLoader;
-import com.bramerlabs.engine3D.objects.RenderObject;
+import com.bramerlabs.engine3D.objects.IcoSphere;
 import org.lwjgl.opengl.GL46;
 
 import java.awt.*;
@@ -25,7 +22,7 @@ public class SoftBodies implements Runnable {
     private Shader shader;
     private Renderer renderer;
 
-    private Cube cube;
+    private IcoSphere sphere    ;
 
     public static void main(String[] args) {
         new SoftBodies().start();
@@ -60,19 +57,19 @@ public class SoftBodies implements Runnable {
 
         renderer = new Renderer(window, new Vector3f(-5, 20, 10));
 
-        cube = new Cube(new Vector3f(0, 0, 0), new Vector3f(0, 0, 0), new Vector3f(1, 1, 1), new Vector4f(0.5f, 0.5f, 0.5f, 1.0f));
-        cube.createMesh();
+        sphere = new IcoSphere(new Vector3f(0, 0, 0), new Vector4f(0.5f, 0.5f, 0.5f, 1.0f), 0.5f);
+        sphere.createMesh();
     }
 
     private void update() {
         window.update();
         GL46.glClearColor(window.r, window.g, window.b, 1.0f);
         GL46.glClear(GL46.GL_COLOR_BUFFER_BIT | GL46.GL_DEPTH_BUFFER_BIT);
-        camera.updateArcball();
+        camera.update();
     }
 
     private void render() {
-        renderer.renderMesh(cube, camera, shader);
+        renderer.renderMesh(sphere, camera, shader);
         window.swapBuffers();
     }
 
