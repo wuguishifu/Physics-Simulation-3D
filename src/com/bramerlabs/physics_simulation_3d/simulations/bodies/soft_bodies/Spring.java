@@ -32,19 +32,19 @@ public class Spring {
         Vector3f rotationAxis;
         float rotationAngle;
 
-        Vector3f cross = Vector3f.cross(axial, Vector3f.e1);
-        if (cross.equals(Vector3f.zero)) {
-            if (Vector3f.normalize(axial).equals(Vector3f.e1)) {
-                rotationAxis = Vector3f.zero;
-                rotationAngle = 0;
-            } else {
-                rotationAxis = Vector3f.e2;
-                rotationAngle = 180;
-            }
-        } else {
-            rotationAxis = Vector3f.normalize(Vector3f.cross(axial, Vector3f.e1));
-            rotationAngle = Vector3f.angleBetween(axial, Vector3f.e1);
-        }
+//        Vector3f cross = Vector3f.cross(axial, Vector3f.e1);
+//        if (cross.equals(Vector3f.zero)) {
+//            if (Vector3f.normalize(axial).equals(Vector3f.e1)) {
+//                rotationAxis = Vector3f.zero;
+//                rotationAngle = 0;
+//            } else {
+//                rotationAxis = Vector3f.e2;
+//                rotationAngle = 180;
+//            }
+//        } else {
+//            rotationAxis = Vector3f.normalize(Vector3f.cross(axial, Vector3f.e1));
+//            rotationAngle = Vector3f.angleBetween(axial, Vector3f.e1);
+//        }
         return Matrix4f.transform(p1, new Vector3f[]{rotationAxis}, new float[]{rotationAngle}, scale);
     }
 
